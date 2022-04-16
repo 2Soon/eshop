@@ -14,4 +14,11 @@ public interface PriorityDAO {
      * */
     List<PriorityDO> listRootPriorities();
 
+    /**
+     * 根据父权限查询子权限
+     * @param parentId 父权限
+     * @return 子权限
+     * */
+    List<PriorityDO> listChildPriorities(Long parentId);
+
 }

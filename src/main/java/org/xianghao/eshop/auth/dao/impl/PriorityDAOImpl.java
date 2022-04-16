@@ -36,4 +36,15 @@ public class PriorityDAOImpl implements PriorityDAO {
         return null;
     }
 
+    /**
+     * 根据父权限查询子权限
+     * @param parentId 父权限
+     * @return 子权限
+     * */
+    @Override
+    public List<PriorityDO> listChildPriorities(Long parentId) {
+
+        return null;
+    }
+
 }
