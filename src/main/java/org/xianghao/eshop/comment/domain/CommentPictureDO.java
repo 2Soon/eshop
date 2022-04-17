@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * 评论晒图
  * */
-public class CommentPicture {
+public class CommentPictureDO {
     private Long id;
     private Long commentInfoId;
 //    private int sequence;
