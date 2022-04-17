@@ -43,7 +43,12 @@ public class PriorityDAOImpl implements PriorityDAO {
      * */
     @Override
     public List<PriorityDO> listChildPriorities(Long parentId) {
+        try {
+            return priorityMapper.listChildPriorities(parentId);
 
+        }catch (Exception e){
+            logger.error("error",e);
+        }
         return null;
     }
 

@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.xianghao.eshop.auth.domain.PriorityDTO;
@@ -49,6 +50,28 @@ public class PriorityController {
 
         return new ArrayList<PriorityVO>();
     }
-
+    /**
+     * 根据父权限id查询子权限
+     * @param parentId 父权限
+     * @return 子权限
+     * */
+    @GetMapping("/child/{parentId}")
+    public List<PriorityVO> listChildPriorities(
+            @PathVariable("parentId") Long parentId){
+        try {
+            List<PriorityDTO> priorityDTOS = priorityService.listChildPriorities(parentId);
+            if (priorityDTOS==null){
+                priorityDTOS = new ArrayList<PriorityDTO>();
+            }
+            ArrayList<PriorityVO> priorityVOS = new ArrayList<PriorityVO>(priorityDTOS.size());
+            for (PriorityDTO priorityDTO : priorityDTOS) {
+                priorityVOS.add(priorityDTO.clone(PriorityVO.class));
+            }
+            return priorityVOS;
+        }catch (Exception e){
+            logger.error("error",e);
+        }
+        return new ArrayList<PriorityVO>();
+    }
 
 }

@@ -35,7 +35,7 @@ public class PriorityServiceImpl implements PriorityService {
     public List<PriorityDTO> listRootPriorities() {
         try {
             List<PriorityDO> priorityDOS = priorityDAO.listRootPriorities();
-            if (priorityDOS == null){
+            if (priorityDOS == null) {
                 return null;
             }
             //arrayList 新建时，传入size大小
@@ -45,6 +45,25 @@ public class PriorityServiceImpl implements PriorityService {
             }
             return priorityDTOS;
 
+
+        } catch (Exception e) {
+            logger.error("error", e);
+        }
+        return null;
+    }
+
+    @Override
+    public List<PriorityDTO> listChildPriorities(Long parentId) {
+        try {
+            List<PriorityDO> priorityDOS = priorityDAO.listChildPriorities(parentId);
+            if (priorityDOS == null) {
+                return null;
+            }
+            ArrayList<PriorityDTO> priorityDTOS = new ArrayList<PriorityDTO>(priorityDOS.size());
+            for (PriorityDO priorityDO : priorityDOS) {
+                priorityDTOS.add(priorityDO.clone(PriorityDTO.class));
+            }
+            return priorityDTOS;
 
         } catch (Exception e) {
             logger.error("error", e);
