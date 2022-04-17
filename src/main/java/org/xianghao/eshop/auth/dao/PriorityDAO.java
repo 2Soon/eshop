@@ -1,5 +1,6 @@
 package org.xianghao.eshop.auth.dao;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.xianghao.eshop.auth.domain.PriorityDO;
 
 import java.util.List;
@@ -21,4 +22,28 @@ public interface PriorityDAO {
      * */
     List<PriorityDO> listChildPriorities(Long parentId);
 
+    /**
+     * 根据ID查询
+     * @param id
+     * @return PriorityDO权限DO
+     * */
+    PriorityDO getPriorityById(Long id);
+
+    /**
+     * 新增权限
+     *
+     * @param priorityDO 权限DO对象
+     */
+    Boolean savePriority(PriorityDO priorityDO);
+    /**
+     * 更新权限
+     *
+     * @param priorityDO 权限DO对象
+     */
+    Boolean updatePriority(PriorityDO priorityDO);
+    /**
+     * 删除权限
+     * @param id
+     * */
+    Boolean removePriority(Long id);
 }

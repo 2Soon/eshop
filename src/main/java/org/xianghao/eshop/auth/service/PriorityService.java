@@ -1,5 +1,6 @@
 package org.xianghao.eshop.auth.service;
 
+import org.xianghao.eshop.auth.domain.PriorityDO;
 import org.xianghao.eshop.auth.domain.PriorityDTO;
 
 import java.util.List;
@@ -19,5 +20,28 @@ public interface PriorityService {
      * @return 子权限
      */
     List<PriorityDTO> listChildPriorities(Long parentId);
+    /**
+     * 根据ID查询
+     * @param id
+     * @return PriorityDO权限DO
+     * */
+    PriorityDTO getPriorityById(Long id);
 
+    /**
+     * 新增权限
+     *
+     * @param priorityDTO 权限DO对象
+     */
+    Boolean savePriority(PriorityDTO priorityDTO);
+    /**
+     * 更新权限
+     *
+     * @param priorityDTO 权限DO对象
+     */
+    Boolean updatePriority(PriorityDTO priorityDTO);
+    /**
+     * 删除权限
+     * @param id
+     * */
+    Boolean removePriority(Long id);
 }

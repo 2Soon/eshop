@@ -52,4 +52,66 @@ public class PriorityDAOImpl implements PriorityDAO {
         return null;
     }
 
+    /**
+     * 根据ID查询
+     * @param id
+     * @return PriorityDO权限DO
+     * */
+    @Override
+    public PriorityDO getPriorityById(Long id) {
+        try {
+            return priorityMapper.getPriorityById(id);
+        }catch (Exception e){
+            logger.error("error",e);
+        }
+        return null;
+    }
+
+    /**
+     * 新增权限
+     *
+     * @param priorityDO 权限DO对象
+     */
+    @Override
+    public Boolean savePriority(PriorityDO priorityDO) {
+        try {
+            priorityMapper.savePriority(priorityDO);
+        }catch (Exception e){
+            logger.error("error",e);
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * 更新权限
+     *
+     * @param priorityDO 权限DO对象
+     */
+    @Override
+    public Boolean updatePriority(PriorityDO priorityDO) {
+        try {
+            priorityMapper.updatePriority(priorityDO);
+        }catch (Exception e){
+            logger.error("error",e);
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * 删除权限
+     * @param id
+     * */
+    @Override
+    public Boolean removePriority(Long id) {
+        try {
+            priorityMapper.removePriority(id);
+        }catch (Exception e){
+            logger.error("error",e);
+            return false;
+        }
+        return true;
+    }
+
 }
