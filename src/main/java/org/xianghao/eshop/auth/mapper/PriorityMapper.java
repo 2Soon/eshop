@@ -73,4 +73,25 @@ public interface PriorityMapper {
     @Options(useGeneratedKeys = true, keyProperty = "id")
     void savePriority(PriorityDO priorityDO);
 
+    /**
+     * 更新权限
+     *
+     * @param priorityDO 权限DO对象
+     */
+    @Update("UPDATE auth_priority SET " +
+            "code=#{code}," +
+            "url=#{url}," +
+            "priority_comment=#{priorityComment}," +
+            "priority_type=#{priorityType}," +
+            "parent_id=#{parentId}," +
+            "gmt_create=#{gmtCreate}," +
+            "gmt_modified=#{gmtModified}" +
+            "WHERE id = #{id}")
+    void updatePriority(PriorityDO priorityDO);
+
+    /**
+     * 删除权限
+     * */
+    @Delete("DELETE FROM auth auth_priority WHERE id = #{id}")
+    void removePriority(@Param("id") Long id);
 }
