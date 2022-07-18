@@ -6,7 +6,7 @@ import java.util.Date;
 /**
  * 评论聚合统计信息
  * */
-public class CommentAggregate {
+public class CommentAggregateDO {
     private Long id;
     private Long goodsId;
     private Long totalCommentCount;
