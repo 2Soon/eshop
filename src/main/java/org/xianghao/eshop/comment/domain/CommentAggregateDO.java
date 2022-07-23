@@ -11,7 +11,7 @@ public class CommentAggregateDO {
     private Long goodsId;
     private Long totalCommentCount;
     private Long goodCommentCount;
-    private BigDecimal goodCommentRate;
+    private Double goodCommentRate;
     private Long showPicturesCommentCount;
     private Long mediumCommentCount;
     private Long badCommentCount;
@@ -50,11 +50,11 @@ public class CommentAggregateDO {
         this.goodCommentCount = goodCommentCount;
     }
 
-    public BigDecimal getGoodCommentRate() {
+    public Double getGoodCommentRate() {
         return goodCommentRate;
     }
 
-    public void setGoodCommentRate(BigDecimal goodCommentRate) {
+    public void setGoodCommentRate(Double goodCommentRate) {
         this.goodCommentRate = goodCommentRate;
     }
 
