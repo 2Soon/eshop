@@ -1,6 +1,8 @@
 package org.xianghao.eshop.order.domain;
 
 import java.util.Date;
+import java.util.List;
+
 /**
  * 订单DTO
  * */
@@ -17,6 +19,10 @@ public class OrderInfoDTO {
      * 用户账号
      * */
     private Long userAccountId;
+    /**
+     * 用户名
+     * */
+    private String username;
     /**
      * 订单状态
      * */
@@ -85,7 +91,10 @@ public class OrderInfoDTO {
      * 销售出库单修改时间
      * */
     private Date gmtModified;
-
+    /**
+     * 订单包含的订单条目
+     */
+    private List<OrderItemDTO> orderItems;
     public Long getId() {
         return id;
     }
@@ -244,5 +253,21 @@ public class OrderInfoDTO {
 
     public void setConfirmReceiptTime(Date confirmReceiptTime) {
         this.confirmReceiptTime = confirmReceiptTime;
+    }
+
+    public List<OrderItemDTO> getOrderItems() {
+        return orderItems;
+    }
+
+    public void setOrderItems(List<OrderItemDTO> orderItems) {
+        this.orderItems = orderItems;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

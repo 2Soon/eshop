@@ -78,7 +78,7 @@ public class CommentController {
 
             //保存评论信息
             CommentInfoDTO commentInfoDTO = commentInfoVO.clone(CommentInfoDTO.class);
-            commentInfoService.saveCommentInfo(commentInfoDTO);
+            commentInfoService.saveManualPublishedCommentInfo(commentInfoDTO);
             //上传评论晒图的图片
             String  appBasePath = request.getSession().getServletContext().getRealPath("/");
             commentPictureService.saveCommentPictures(appBasePath, commentInfoDTO.getId(), files);

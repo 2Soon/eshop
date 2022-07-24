@@ -8,8 +8,12 @@ import java.util.Date;
  * */
 public class OrderItemDTO {
     private Long id;
-    private Long orderId;
+    private Long orderInfoId;
     private Long goodsSkuId;
+    /**
+     * goodsId
+     * */
+    private Long goodsId;
     private String goodsSkuCode;
     private String goodsName;
     /**
@@ -46,12 +50,12 @@ public class OrderItemDTO {
         this.id = id;
     }
 
-    public Long getOrderId() {
-        return orderId;
+    public Long getOrderInfoId() {
+        return orderInfoId;
     }
 
-    public void setOrderId(Long orderId) {
-        this.orderId = orderId;
+    public void setOrderInfoId(Long orderId) {
+        this.orderInfoId = orderId;
     }
 
     public Long getGoodsSkuId() {
@@ -156,5 +160,13 @@ public class OrderItemDTO {
 
     public void setGmtModified(Date gmtModified) {
         this.gmtModified = gmtModified;
+    }
+
+    public Long getGoodsId() {
+        return goodsId;
+    }
+
+    public void setGoodsId(Long goodsId) {
+        this.goodsId = goodsId;
     }
 }
