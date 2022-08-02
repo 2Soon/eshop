@@ -1,11 +1,13 @@
 package org.xianghao.eshop.comment.mapper;
 
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
 import org.xianghao.eshop.comment.domain.CommentPictureDO;
 
 /**
  * 评论晒图模块的mapper组件
  */
+@Mapper
 public interface CommentPictureMapper {
 
     /**
