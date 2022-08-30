@@ -8,7 +8,7 @@ import org.xianghao.eshop.common.util.BeanCopierUtils;
 
 
 /**
- * 商品属性DO类
+ * 商品属性DTO类
  *
  */
 public class PropertyDTO {
