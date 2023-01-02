@@ -16,7 +16,7 @@ import java.util.List;
  * */
 @Repository
 public class PriorityDAOImpl implements PriorityDAO {
-    private static final Logger logger = LoggerFactory.getLogger(PriorityServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(PriorityDAOImpl.class);
 
 
     @Autowired

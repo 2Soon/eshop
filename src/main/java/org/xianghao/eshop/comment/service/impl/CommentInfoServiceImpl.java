@@ -20,7 +20,7 @@ import java.util.Date;
  */
 @Service
 public class CommentInfoServiceImpl implements CommentInfoService {
-    private static final Logger logger = LoggerFactory.getLogger(PriorityServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(CommentInfoServiceImpl.class);
 
     /**
      * 评论信息管理模块DAO

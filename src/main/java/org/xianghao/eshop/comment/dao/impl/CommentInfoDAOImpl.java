@@ -15,7 +15,7 @@ import org.xianghao.eshop.comment.mapper.CommentInfoMapper;
  * */
 @Repository
 public class CommentInfoDAOImpl implements CommentInfoDAO {
-    private static final Logger logger = LoggerFactory.getLogger(PriorityServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(CommentInfoDAOImpl.class);
 
     /**
      * 评论信息管理模块的mapper组件

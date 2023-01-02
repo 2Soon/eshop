@@ -3,7 +3,7 @@ package org.xianghao.eshop.comment.dao.impl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.xianghao.eshop.comment.controller.CommentController;
+import org.springframework.stereotype.Repository;
 import org.xianghao.eshop.comment.dao.CommentPictureDAO;
 import org.xianghao.eshop.comment.domain.CommentPictureDO;
 import org.xianghao.eshop.comment.mapper.CommentPictureMapper;
@@ -11,8 +11,9 @@ import org.xianghao.eshop.comment.mapper.CommentPictureMapper;
 /**
  * 评论晒图模块的dao组件
  */
+@Repository
 public class CommentPictureDAOImpl implements CommentPictureDAO {
-    private static final Logger logger = LoggerFactory.getLogger(CommentController.class);
+    private static final Logger logger = LoggerFactory.getLogger(CommentPictureDAOImpl.class);
 
 
     @Autowired

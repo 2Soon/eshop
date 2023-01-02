@@ -4,8 +4,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import org.xianghao.eshop.comment.controller.CommentController;
 import org.xianghao.eshop.comment.dao.CommentPictureDAO;
 import org.xianghao.eshop.comment.domain.CommentPictureDO;
 import org.xianghao.eshop.comment.service.CommentPictureService;
@@ -17,8 +17,9 @@ import java.util.Date;
 /**
  * 评论晒图模块的Service组件
  */
+@Service
 public class CommentPictureServiceImpl implements CommentPictureService {
-    private static final Logger logger = LoggerFactory.getLogger(CommentController.class);
+    private static final Logger logger = LoggerFactory.getLogger(CommentPictureServiceImpl.class);
 
     @Autowired
     private CommentPictureDAO commentPictureDAO;

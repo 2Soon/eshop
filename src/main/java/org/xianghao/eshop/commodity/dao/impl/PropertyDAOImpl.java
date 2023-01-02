@@ -3,6 +3,7 @@ package org.xianghao.eshop.commodity.dao.impl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.xianghao.eshop.commodity.dao.PropertyDAO;
 import org.xianghao.eshop.commodity.domain.PropertyDO;
 import org.xianghao.eshop.commodity.domain.PropertyQuery;
@@ -14,6 +15,7 @@ import java.util.List;
 /**
  * 商品属性管理模块的DAO接口
  * */
+@Repository
 public class PropertyDAOImpl implements PropertyDAO {
 
     private static final Logger logger = LoggerFactory.getLogger(PropertyDAOImpl.class);

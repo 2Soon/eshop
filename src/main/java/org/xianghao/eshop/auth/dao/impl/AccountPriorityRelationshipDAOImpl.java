@@ -2,9 +2,11 @@ package org.xianghao.eshop.auth.dao.impl;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.xianghao.eshop.auth.dao.AccountPriorityRelationshipDAO;
 import org.xianghao.eshop.auth.mapper.AccountPriorityRelationshipMapper;
 
+@Repository
 public class AccountPriorityRelationshipDAOImpl implements AccountPriorityRelationshipDAO {
 
     @Autowired

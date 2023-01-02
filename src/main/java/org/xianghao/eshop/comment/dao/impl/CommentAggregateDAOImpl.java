@@ -3,6 +3,7 @@ package org.xianghao.eshop.comment.dao.impl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.xianghao.eshop.comment.dao.CommentAggregateDAO;
 import org.xianghao.eshop.comment.domain.CommentAggregateDO;
 import org.xianghao.eshop.comment.mapper.CommentAggregateMapper;
@@ -10,6 +11,7 @@ import org.xianghao.eshop.comment.mapper.CommentAggregateMapper;
 /**
  * 评论统计信息管理模块的DAO组件
  */
+@Repository
 public class CommentAggregateDAOImpl implements CommentAggregateDAO {
     private static final Logger logger = LoggerFactory.getLogger(CommentAggregateDAOImpl.class);
 
