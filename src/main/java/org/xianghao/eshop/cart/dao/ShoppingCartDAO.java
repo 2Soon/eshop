@@ -21,6 +21,6 @@ public interface ShoppingCartDAO {
 	 * 新增购物车
 	 * @param shoppingCartDO 购物车DO对象
 	 */
-	Boolean saveShoppingCart(ShoppingCartDO shoppingCartDO);
+	Long saveShoppingCart(ShoppingCartDO shoppingCartDO);
 	
 }

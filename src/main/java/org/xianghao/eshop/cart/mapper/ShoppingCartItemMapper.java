@@ -1,14 +1,9 @@
 package org.xianghao.eshop.cart.mapper;
 
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Options;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import org.xianghao.eshop.cart.domain.ShoppingCartItemDO;
+
+import java.util.List;
 
 
 /**
@@ -76,5 +71,36 @@ public interface ShoppingCartItemMapper {
 				+ "gmt_modified=#{gmtModified} "
 			+ "WHERE id=#{id}") 
 	void updateShoppingCartItem(ShoppingCartItemDO shoppingCartItemDO);
-	
+
+	/**
+	 * 查询购物车中的所有条目
+	 * @param shoppingCartId 购物车id
+	 * @return 商品条目
+	 */
+	@Select("SELECT "
+			+ "id,"
+			+ "shopping_cart_id,"
+			+ "goods_sku_id,"
+			+ "purchase_quantity,"
+			+ "gmt_create,"
+			+ "gmt_modified "
+			+ "FROM shopping_cart_item "
+			+ "WHERE shopping_cart_id=#{shoppingCartId} ")
+	@Results({
+			@Result(column = "id", property = "id", id = true),
+			@Result(column = "shopping_cart_id", property = "shoppingCartId"),
+			@Result(column = "goods_sku_id", property = "goodsSkuId"),
+			@Result(column = "purchase_quantity", property = "purchaseQuantity"),
+			@Result(column = "gmt_create", property = "gmtCreate"),
+			@Result(column = "gmt_modified", property = "gmtModified")
+	})
+	List<ShoppingCartItemDO> listShoppingCartItemByCartId(
+			@Param("shoppingCartId") Long shoppingCartId);
+
+	/**
+	 * 删除购物车条目
+	 * @param id 购物车条目id
+	 */
+	@Delete("DELETE FROM shopping_cart_item WHERE id=#{id}")
+	void remove(@Param("id") Long id);
 }

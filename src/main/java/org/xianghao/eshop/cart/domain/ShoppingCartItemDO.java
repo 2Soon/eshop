@@ -1,6 +1,7 @@
 package org.xianghao.eshop.cart.domain;
 
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * 购物车条目DO类
@@ -70,5 +71,17 @@ public class ShoppingCartItemDO {
 	public void setGmtModified(Date gmtModified) {
 		this.gmtModified = gmtModified;
 	}
-	
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		ShoppingCartItemDO that = (ShoppingCartItemDO) o;
+		return Objects.equals(id, that.id) && Objects.equals(shoppingCartId, that.shoppingCartId) && Objects.equals(goodsSkuId, that.goodsSkuId) && Objects.equals(purchaseQuantity, that.purchaseQuantity);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, shoppingCartId, goodsSkuId, purchaseQuantity);
+	}
 }
